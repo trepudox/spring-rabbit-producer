@@ -1,0 +1,7 @@
+server:
+  port: 8080
+
+spring:
+  rabbitmq:
+    url: amqp://producer:producer@localhost:5672
+    queue: spring_queue
