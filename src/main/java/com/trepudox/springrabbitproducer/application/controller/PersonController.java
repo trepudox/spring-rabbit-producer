@@ -19,6 +19,7 @@ public class PersonController {
     public ResponseEntity<?> postMessage(@RequestBody Person person) {
         String personJson = PersonMapper.INSTANCE.personToJson(person);
         rabbitClient.sendMessage(personJson);
+
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 

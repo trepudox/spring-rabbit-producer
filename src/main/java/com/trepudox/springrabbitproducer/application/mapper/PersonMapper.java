@@ -19,12 +19,4 @@ public interface PersonMapper {
         }
     }
 
-    default Person jsonToPerson(String json) {
-        try {
-            return new ObjectMapper().readValue(json, Person.class);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
 }
